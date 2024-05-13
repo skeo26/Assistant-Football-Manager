@@ -77,7 +77,7 @@ namespace WPFTMH {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPFTMH;component/transferwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPFTMH;V1.0.0.0;component/transferwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\TransferWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
