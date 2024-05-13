@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "TMHWPF.DataAccess/1.0.0": {
+        "dependencies": {
+          "TMHWPF.Business": "1.0.0"
+        },
+        "runtime": {
+          "TMHWPF.DataAccess.dll": {}
+        }
+      },
+      "TMHWPF.Business/1.0.0": {
+        "runtime": {
+          "TMHWPF.Business.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TMHWPF.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TMHWPF.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -59,7 +59,7 @@ namespace WPFTMH
             }
 
             ITransferService transferService = new TransferService(transferMarket);
-            _currentClub.TransferService = transferService;ы
+            _currentClub.TransferService = transferService;
             ProgressBar.Visibility = Visibility.Visible;
             ProgressBar.IsIndeterminate = true;
             bool isTransferSuccessful = await _currentClub.TryTransferPlayer(player, transferAmount, salary);

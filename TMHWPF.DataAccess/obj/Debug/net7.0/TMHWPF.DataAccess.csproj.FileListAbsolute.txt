@@ -1,0 +1,15 @@
+D:\c#\TMHWPF.DataAccess\bin\Debug\net7.0\TMHWPF.DataAccess.deps.json
+D:\c#\TMHWPF.DataAccess\bin\Debug\net7.0\TMHWPF.DataAccess.dll
+D:\c#\TMHWPF.DataAccess\bin\Debug\net7.0\TMHWPF.DataAccess.pdb
+D:\c#\TMHWPF.DataAccess\bin\Debug\net7.0\TMHWPF.Business.dll
+D:\c#\TMHWPF.DataAccess\bin\Debug\net7.0\TMHWPF.Business.pdb
+D:\c#\TMHWPF.DataAccess\obj\Debug\net7.0\TMHWPF.DataAccess.csproj.AssemblyReference.cache
+D:\c#\TMHWPF.DataAccess\obj\Debug\net7.0\TMHWPF.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\c#\TMHWPF.DataAccess\obj\Debug\net7.0\TMHWPF.DataAccess.AssemblyInfoInputs.cache
+D:\c#\TMHWPF.DataAccess\obj\Debug\net7.0\TMHWPF.DataAccess.AssemblyInfo.cs
+D:\c#\TMHWPF.DataAccess\obj\Debug\net7.0\TMHWPF.DataAccess.csproj.CoreCompileInputs.cache
+D:\c#\TMHWPF.DataAccess\obj\Debug\net7.0\TMHWPF.DataAccess.csproj.CopyComplete
+D:\c#\TMHWPF.DataAccess\obj\Debug\net7.0\TMHWPF.DataAccess.dll
+D:\c#\TMHWPF.DataAccess\obj\Debug\net7.0\refint\TMHWPF.DataAccess.dll
+D:\c#\TMHWPF.DataAccess\obj\Debug\net7.0\TMHWPF.DataAccess.pdb
+D:\c#\TMHWPF.DataAccess\obj\Debug\net7.0\ref\TMHWPF.DataAccess.dll

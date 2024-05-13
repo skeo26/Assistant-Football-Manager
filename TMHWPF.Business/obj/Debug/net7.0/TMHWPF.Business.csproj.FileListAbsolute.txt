@@ -1,0 +1,12 @@
+D:\c#\TMHWPF.Business\bin\Debug\net7.0\TMHWPF.Business.deps.json
+D:\c#\TMHWPF.Business\bin\Debug\net7.0\TMHWPF.Business.dll
+D:\c#\TMHWPF.Business\bin\Debug\net7.0\TMHWPF.Business.pdb
+D:\c#\TMHWPF.Business\obj\Debug\net7.0\TMHWPF.Business.csproj.AssemblyReference.cache
+D:\c#\TMHWPF.Business\obj\Debug\net7.0\TMHWPF.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\c#\TMHWPF.Business\obj\Debug\net7.0\TMHWPF.Business.AssemblyInfoInputs.cache
+D:\c#\TMHWPF.Business\obj\Debug\net7.0\TMHWPF.Business.AssemblyInfo.cs
+D:\c#\TMHWPF.Business\obj\Debug\net7.0\TMHWPF.Business.csproj.CoreCompileInputs.cache
+D:\c#\TMHWPF.Business\obj\Debug\net7.0\TMHWPF.Business.dll
+D:\c#\TMHWPF.Business\obj\Debug\net7.0\refint\TMHWPF.Business.dll
+D:\c#\TMHWPF.Business\obj\Debug\net7.0\TMHWPF.Business.pdb
+D:\c#\TMHWPF.Business\obj\Debug\net7.0\ref\TMHWPF.Business.dll
