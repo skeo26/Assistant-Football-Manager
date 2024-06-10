@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 D:\c#\WPFTMH\App.xaml
-32097824235
+4483445411
 
-381656350173
-198-2048575587
-MainWindow.xaml;TransferWindow.xaml;Views\LoginWindow.xaml;
+181170041095
+205-685158397
+MainWindow.xaml;TransferWindow.xaml;Views\DetailsTransferWindow.xaml;Views\LoginWindow.xaml;
 
 True
 

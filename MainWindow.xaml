@@ -3,9 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFTMH"
+        xmlns:viewModel="clr-namespace:WPFTMH.ViewModel" xmlns:local="clr-namespace:WPFTMH.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="600">
+    <Window.DataContext>
+        <viewModel:MainWindowViewModel/>
+    </Window.DataContext>
+    
     <Window.Resources>
         <Style x:Key="CustomDataGridStyle" TargetType="DataGrid">
             <Setter Property="Background" Value="#F0F0F0"/>
@@ -59,46 +63,88 @@
         </Style>
     </Window.Resources>
     <DockPanel>
-
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="50" Background="#81C784" VerticalAlignment="Top">
             <Image Source="D:\c#\WPFTMH\Elements\менеджер.png" Width="39" Height="37"/>
             <TextBlock Text="{Binding CoachInfo}" DockPanel.Dock="Top" Margin="10" FontSize="20" Width="530" />
         </StackPanel>
+
         <StackPanel DockPanel.Dock="Left" Width="100" Background="#81C784">
-            <Button Background="Transparent" BorderThickness="0" Click="TeamInfo_Click">
+            <Button Background="Transparent" BorderThickness="0" Command="{Binding ShowTeamInfoCommand}">
                 <Image Source="D:\c#\WPFTMH\Elements\команда.png" Width="50" Height="50" Margin="0,20,0,20"/>
             </Button>
-            <Button Background="Transparent" BorderThickness="0" Click="Transfer_Click">
+            <Button Background="Transparent" BorderThickness="0" Command="{Binding ShowTransfersCommand}">
                 <Image Source="D:\c#\WPFTMH\Elements\трансфер.png" Width="50" Height="50" Margin="0,20,0,20"/>
             </Button>
-            <Button Content="Выполнить трансфер" Click="ExecuteTransfer_Click" Visibility="Collapsed" />
-            <Button Background="Transparent" BorderThickness="0" Click="ClubInfo_Click">
+            
+            <Button Background="Transparent" BorderThickness="0" Command="{Binding ShowClubInfoCommand}">
                 <Image Source="D:\c#\WPFTMH\Elements\клуб.png"  Margin="0,20,0,20" Width="65" Height="65"/>
             </Button>
         </StackPanel>
+
         <Grid>
             <Image Source="D:\c#\WPFTMH\Elements\footballstadium.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="UniformToFill"/>
             <Rectangle Fill="Black" Opacity="0.6"/>
-            <DataGrid Name="TeamDataGrid" ItemsSource="{Binding Players}" AutoGenerateColumns="True" Margin="10"
-                    Style="{StaticResource CustomDataGridStyle}" ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" Visibility="Collapsed">
+
+            
+
+            <DataGrid Name="TeamDataGrid" ItemsSource="{Binding TeamViewModel.Players}" AutoGenerateColumns="False" Margin="10"
+                  Visibility="{Binding TeamViewModel.TeamDataGridVisibility}"
+                  Style="{StaticResource CustomDataGridStyle}" ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="First Name" Binding="{Binding FirstName, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Last Name" Binding="{Binding LastName, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Team" Binding="{Binding Team, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Nationality" Binding="{Binding Nationality, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Age" Binding="{Binding Age, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Skills" Binding="{Binding Skills, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Position" Binding="{Binding Position, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Salary" Binding="{Binding Salary, StringFormat=\{0:C\}, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Market Value" Binding="{Binding MarketValue, StringFormat=\{0:C\}, Mode=OneWay}" />
+                    <DataGridCheckBoxColumn Header="Ready To Transfer" Binding="{Binding IsReadyToTransfer, Mode=OneWay}" />
+                </DataGrid.Columns>
             </DataGrid>
-            <DataGrid Name="TransferrablePlayersDataGrid" AutoGenerateColumns="True" ItemsSource="{Binding AvailablePlayers}"
-                  SelectedItem="{Binding SelectedPlayer}" Visibility="Collapsed"
-                  Style="{StaticResource CustomDataGridStyle}" ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" Margin="21,48,10,10"
-                  SelectionChanged="TransferrablePlayersDataGrid_SelectionChanged">
+
+
+            <DataGrid Name="TransferrablePlayersDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding TransferViewModel.AvailablePlayers}"
+              SelectedItem="{Binding TransferViewModel.SelectedPlayer}" Margin="21,48,10,10"
+              Visibility="{Binding TransferViewModel.TransferrablePlayersDataGridVisibility}"
+              Style="{StaticResource CustomDataGridStyle}" ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">  
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="First Name" Binding="{Binding FirstName, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Last Name" Binding="{Binding LastName, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Team" Binding="{Binding Team, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Nationality" Binding="{Binding Nationality, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Age" Binding="{Binding Age, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Skills" Binding="{Binding Skills, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Position" Binding="{Binding Position, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Salary" Binding="{Binding Salary, StringFormat=\{0:C\}, Mode=OneWay}" />
+                    <DataGridTextColumn Header="Market Value" Binding="{Binding MarketValue, StringFormat=\{0:C\}, Mode=OneWay}" />
+                    <DataGridCheckBoxColumn Header="Ready to Transfer" Binding="{Binding IsReadyToTransfer, Mode=OneWay}" />
+                </DataGrid.Columns>
             </DataGrid>
-            <DataGrid x:Name="ClubDataGrid" ItemsSource="{Binding ClubInfo}" AutoGenerateColumns="False" Margin="10"
-                        ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}"
-                        Style="{StaticResource CustomDataGridStyle}" Visibility="Collapsed">
+
+
+            <DataGrid x:Name="ClubDataGrid" ItemsSource="{Binding ClubViewModel.ClubInfo}" AutoGenerateColumns="False" Margin="10"
+                      Visibility="{Binding ClubViewModel.ClubDataGridVisibility}"
+                      ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}"
+                      Style="{StaticResource CustomDataGridStyle}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Атрибут" Binding="{Binding Key}"/>
                     <DataGridTextColumn Header="Значение" Binding="{Binding Value}"/>
                 </DataGrid.Columns>
             </DataGrid>
+
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="50" VerticalAlignment="Top">
-                <Button x:Name="ExecuteTransferButton" Content="Выполнить трансфер" Click="ExecuteTransfer_Click" Visibility="Collapsed" IsEnabled="{Binding SelectedPlayer}" Style="{StaticResource StylishButton}" Height="26"/>
-                <Button x:Name="TransferDetailsButton" Content="Детали трансфера" Click="TransferDetails_Click" Visibility="Collapsed" Style="{StaticResource StylishButton}" Height="26" Margin="150,5"/>
+                <Button x:Name="ExecuteTransferButton" Content="Выполнить трансфер" Command="{Binding ShowTransferCommand}"
+                        Visibility="{Binding TransferViewModel.ExecuteTransferButtonVisibility}" 
+                        Style="{StaticResource StylishButton}" Height="26" Margin="5"/>
+                <Button x:Name="TransferDetailsButton" Content="Детали трансфера" Command="{Binding ShowTransferDetailsCommand}" 
+                        Visibility="{Binding TransferViewModel.TransferDetailsButtonVisibility}" 
+                        Style="{StaticResource StylishButton}" Height="26" Margin="5"/>
+                
+                
             </StackPanel>
+            <ContentControl Content="{Binding CurrentView}" />
         </Grid>
     </DockPanel>
 </Window>

@@ -1,6 +1,0 @@
-Club                  | Country       | Balance     | Coach         | Players
-Manchester United    | England      |  610000000 | tenHag          |      29
-Manchester City      | England      |  927000000 | Guardiola       |      25
-Chelsea              | England      |  831000000 | Pochettino      |      27
-Liverpool            | England      |  984000000 | Klopp           |      23
-New Castle           | England      |  800000000 | Howe            |      25

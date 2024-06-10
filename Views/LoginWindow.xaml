@@ -3,13 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFTMH.Views"
+        xmlns:viewModel="clr-namespace:WPFTMH.ViewModel"
+        xmlns:local="clr-namespace:WPFTMH.Converters"
         mc:Ignorable="d"
         Title="LoginWindow" Height="800" Width="600">
     <Window.Background>
         <ImageBrush ImageSource="D:\c#\WPFTMH\Elements\footballauthorization.png"/>
     </Window.Background>
+    <Window.DataContext>
+        <viewModel:LoginViewModel/>
+    </Window.DataContext>
     <Window.Resources>
+        <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
         <Style x:Key="RoundedTextBox" TargetType="{x:Type TextBox}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -70,12 +75,12 @@
         <Border Background="Black" Opacity="0.7" HorizontalAlignment="Center" VerticalAlignment="Center" Width="307" Height="348" CornerRadius="20">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="280">
                 <Label Content="Логин" Foreground="White" FontSize="16" Margin="0,10"/>
-                <TextBox x:Name="AuthorisationLoginTextBox" Style="{StaticResource RoundedTextBox}" Width="250" Height="40" FontSize="18" Margin="0,10"/>
+                <TextBox Style="{StaticResource RoundedTextBox}" Width="250" Height="40" FontSize="18" Margin="0,10" Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"/>
                 <Label Content="Пароль" Foreground="White" FontSize="16" Margin="0,10"/>
-                <TextBox Style="{StaticResource RoundedTextBox}" Width="250" Height="40" FontSize="18" Margin="0,10" x:Name="AuthorisationPasswordTextBox"/>
-                <Button Content="Вход" Style="{StaticResource StylishButton}" Width="250" Height="40" Margin="0,20" Click="Authorisation_Click"/>
-                <Label x:Name="SuccessLabel" Foreground="Green" HorizontalAlignment="Center" Visibility="Collapsed" Content="Авторизация успешно пройдена"/>
-                <Label x:Name="ErrorLabel" Foreground="Red" HorizontalAlignment="Center" Visibility="Collapsed" Content="Неверный логин или пароль"/>
+                <TextBox Style="{StaticResource RoundedTextBox}" Width="250" Height="40" FontSize="18" Margin="0,10" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Content="Вход" Style="{StaticResource StylishButton}" Width="250" Height="40" Margin="0,20" Command="{Binding AuthorizeCommand}"/>
+                <Label Foreground="Green" HorizontalAlignment="Center" Visibility="{Binding IsSuccessVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Content="Авторизация успешно пройдена"/>
+                <Label Foreground="Red" HorizontalAlignment="Center" Visibility="{Binding IsErrorVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Content="{Binding Message}"/>
             </StackPanel>
         </Border>
     </Grid>

@@ -1,6 +1,0 @@
-Login			| Password			| FirstName			| LastName
-iloveharrymaguire	| onanatop			| Erik				| tenHag
-sharlatan		| 12345				| Josep				| Guardiola
-maurmaur		| mudrickmisha			| Mauricio			| Pochettino
-youneverwalkalone	| legend			| Jurgen			| Klopp
-shearerlegend		| 12345				| Eddie				| Howe

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TMHWPF.Business", "..\TMHWP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TMHWPF.DataAccess", "..\TMHWPF.DataAccess\TMHWPF.DataAccess.csproj", "{21DA8BC9-54FF-406A-B779-793B012161B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsBusinessLogic", "..\TestsBusinessLogic\TestsBusinessLogic.csproj", "{77F06C89-E6E8-4D64-8C88-EDEAA64351F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestsBusinessLogic", "..\TestsBusinessLogic\TestsBusinessLogic.csproj", "{77F06C89-E6E8-4D64-8C88-EDEAA64351F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

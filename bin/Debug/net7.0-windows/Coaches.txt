@@ -1,6 +1,0 @@
-FirstName		| LastName		| Age			| Login			| Password
-Erik			| tenHag		| 54			| iloveharrymaguire	| onanatop
-Josep			| Guardiola		| 53			| sharlatan		| 12345
-Mauricio		| Pochettino		| 52			| maurmaur		| mudrickmisha
-Jurgen			| Klopp			| 56			| youneverwalkalone	| legend
-Eddie			| Howe			| 46			| shearerlegend		| 12345
